@@ -4,6 +4,12 @@ We have a platform where psychiatrists can register their patients through a mob
 Each psychiatrist belongs to a hospital. We have provided the hospital list on the last
 page.(predefined list).
 
+Project is Live on the  AWS server <br>
+You can directly test it in your Postman <br>
+Server ip : ``` 13.235.2.5 ``` <br>
+Port : ```3000```<br>
+API Testing URL : http://13.235.2.5:3000/<API END Point><br>
+
 
 ## Steps  For Installing / Running the Project
   1. Clone the Repository 
@@ -18,6 +24,15 @@ npm install
 ```
 npm start 
 ```
+  
+# List of Libraries/ Framworks
+  1. Express
+  2. Body Parser
+  3. Mysql 
+  4. Nodemon 
+ ## Deployment 
+  1. NodeJs Server : AWS Ec2 Instance (ubuntu 20.4 LTS)
+  2. MySQL Database : AWS Ec2 Instance (ubuntu 20.4 LTS)
 
 # API EndPoints 
 1. patient => All crud operations 
