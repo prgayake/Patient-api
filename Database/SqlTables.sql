@@ -11,13 +11,24 @@ create table patient(
     unique(email)
 );
 
--- create table  for psychiatrist
+-- -- create table  for psychiatrist
+-- First name (20 char max), Last name (20 Char max), mandatory field
+-- - Hospital Name, mandatory
+-- - Phone number
+-- - Pincode
+-- - State
+
 create table psychiatrist(
     id int not null auto_increment,
-    name varchar(255) not null,
+    first_name varchar(255) not null,
+    last_name varchar(255) not null,
+    hospital_name varchar(255) not null,
     phone varchar(255) not null,
+    pincode varchar(255) not null,
+    state varchar(255) not null,
     primary key(id)
 );
+
 
 -- insert into patient
 insert into patient(name, address, email, phone, password, photo, psychiatrist_id) values('Pradyumna', '123 Main St', 'prgayake@gmail.com', '1234567890', '12345678', '', 1);
@@ -26,6 +37,5 @@ insert into patient(name, address, email, phone, password, photo, psychiatrist_i
 insert into patient(name, address, email, phone, password, photo, psychiatrist_id) values('Mayur', '123 Main St', 'mayur@gmail.com', '1234567890', '12345678', '', 2);
 
 -- insert into psychiatrist
-insert into psychiatrist(name, phone) values('Dr.Anuj', '1234567890');
-insert into psychiatrist(name, phone) values('Dr.Rohan', '1234567890');
-insert into psychiatrist(name, phone) values('Dr.Sneha', '1234567890');
+insert into psychiatrist(first_name, last_name, hospital_name, phone, pincode, state) values('Dr.Pradyumna', 'Gayake', 'Hospital', '1234567890', '12345678', 'Karnataka');
+insert into psychiatrist(first_name, last_name, hospital_name, phone, pincode, state) values('Dr.Aniruddha', 'Gayake', 'Hospital', '1234567890', '12345678', 'Maharashtra');
