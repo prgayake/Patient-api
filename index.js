@@ -5,9 +5,7 @@ const bodyParser = require('body-parser');
 // create connection to mysql database
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //API endpont 1 : where all Operation on the patient table will be done
 const patientRouter = require('./apis/patient');
@@ -24,6 +22,6 @@ app.use('/register', register);
 //fetch count of each psychatrist patients
 const count = require('./apis/count');
 app.use('/count', count);
-
+app.use(express.json());
 const PORT = 3000;
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));

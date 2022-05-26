@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
 
 //create endpoint insert a new patient into the database 
 router.post('/', (req, res) => {
+
     const { name,address,email,phone,password,photo,psychiatrist_id } = req.body;
     console.log(req.body);
     config.query('INSERT INTO patient (name,address,email,phone,password,photo,psychiatrist_id) VALUES (?, ?, ?,?,?,?,?)', [name,address,email,phone,password,photo,psychiatrist_id], (err, result) => {
