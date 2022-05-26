@@ -21,6 +21,9 @@ app.use('/allpatients', allPatients);
 const register = require('./apis/register');
 app.use('/register', register);
 
+//fetch count of each psychatrist patients
+const count = require('./apis/count');
+app.use('/count', count);
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
