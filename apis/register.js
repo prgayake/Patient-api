@@ -6,7 +6,7 @@ const config = require('../config');
 router.post('/', (req, res) => {
     const {first_name, last_name, hospital_name, phone, pincode, state } = req.body;
     config.query(`INSERT INTO psychiatrist (first_name, last_name, hospital_name, phone, pincode, state) VALUES ('${first_name}', '${last_name}', '${hospital_name}', '${phone}', '${pincode}', '${state}')`, (err, result) => {
-        if (err) throw err;
+        if (err) res.send(err);
         res.json(result);
     });
 });
@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
 //create endpoint in get all psychiatrist from database
 router.get('/', (req, res) => {
     config.query(`SELECT * FROM psychiatrist`, (err, result) => {
-        if (err) throw err;
+        if (err) res.send(err);
         res.json(result);
     });
 });
