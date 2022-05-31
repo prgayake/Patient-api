@@ -10,6 +10,15 @@ router.get('/', (req, res) => {
     });
 });
 
+//get specific patient 
+router.get('/:id', (req, res) => {
+    config.query(`SELECT * FROM patient where id =${req.params.id}`, (err, result) => {
+        if (err) res.send(err);
+        res.json(result);
+    });
+});
+
+
 //create endpoint insert a new patient into the database 
 router.post('/', (req, res) => {
 
